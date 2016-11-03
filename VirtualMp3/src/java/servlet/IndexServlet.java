@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Phong
  */
-public class ProcessServlet extends HttpServlet {
+public class IndexServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,18 +30,17 @@ public class ProcessServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String contentUrl =                //Don't change
+                ResourceStrings.INDEX_PAGE;//Change
+        //----------CODE START---------
         
-        String forwardUrl = ResourceStrings.INDEX_SERVLET;//Default servlet
-        String action = request.getParameter("action");
+                    
         
-        if(action == null){
-            //-------First visit / Invalid params
-        }else{
-            //-------Forward to other servlets
-            
-        }
-        
-        request.getRequestDispatcher(forwardUrl).forward(request, response);
+        //----------CODE END-----------
+        //Don't change
+        request.setAttribute("contentUrl", contentUrl);
+        request.getRequestDispatcher(ResourceStrings.LAYOUT_PAGE)
+                .forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
