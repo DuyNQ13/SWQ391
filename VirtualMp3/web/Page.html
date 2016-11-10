@@ -13,24 +13,24 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/bootstrap.css" type="text/css"/>
-        <link rel="stylesheet" href="../css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
         <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
-        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <!--SCRIPT-->
-        <script src="../js/domController.js" type="text/javascript"></script>
+        <script src="js/domController.js" type="text/javascript"></script>
     </head>
     <body>
         <div>
-            <img src="../../resource/testCover/c1.jpg" id="bg"/>
+            <img src="resource/testCover/c1.jpg" id="bg"/>
             <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#">
-                            <img alt="Brand" src="../../resource/logo.png"/>
+                            <img alt="Brand" src="resource/logo.png"/>
                         </a>
                     </div>
                     <ul class="nav navbar-nav">
@@ -55,7 +55,9 @@ and open the template in the editor.
             </nav>
             <!--START CONTENT-->
             
-            
+            <div class="container-fluid" ng-view>
+                
+            </div>
             
             <!--END CONTENT-->
             <nav class="navbar navbar-custom-bottom navbar-fixed-bottom">
@@ -66,7 +68,7 @@ and open the template in the editor.
                         <li><a href="#"><span class="fa fa-step-forward"></span></a></li>
                     </ul>
                     <ul class="nav navbar-nav nav-center col-md-6">
-                        <li><img src="../../resource/cover.jpg"/></li>
+                        <li><img src="resource/cover.jpg"/></li>
                         <ul class="nav-center-info">
                             <li><p>11:11 - Taeyeon</p></li>
                         </ul>
