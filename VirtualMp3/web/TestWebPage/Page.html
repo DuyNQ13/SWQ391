@@ -4,20 +4,47 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
+<script>
+    var state = 'stop';
+    function buttonPlayPress() {
+        if (state === 'stop') {
+            state = 'play';
+            $('#play-pause-button').removeClass('glyphicon-play');
+            $('#play-pause-button').addClass('glyphicon-pause');
+        } else if (state === 'play' || state === 'resume') {
+            state = 'pause';
+            $('#play-pause-button').removeClass('glyphicon-pause');
+            $('#play-pause-button').addClass('glyphicon-play');
+        } else if (state === 'pause') {
+            state = 'resume';
+            $('#play-pause-button').removeClass('glyphicon-play');
+            $('#play-pause-button').addClass('glyphicon-pause');
+        }
+    }
+
+    function buttonStopPress() {
+        state = 'stop';
+        $('#play-pause-button').removeClass('glyphicon-pause');
+        $('#play-pause-button').addClass('glyphicon-play');
+    }
+</script>
+
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Virtual Mp3</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/bootstrap.css" type="text/css"/>
         <link rel="stylesheet" href="../css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div>
-            <img src="../../resource/testCover/c1.jpg" width="100%" height="80%"/>
+            <img src="../../resource/testCover/c1.jpg" id="bg"/>
             <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -29,7 +56,7 @@ and open the template in the editor.
                         <li class="active"><a href="#">Home</a></li>
                         <li class="active"><a href="#">About</a></li>
                     </ul>
-                    <form class="navbar-form navbar-left search-custom" role="search">
+                    <form class="navbar-form navbar-left search-custom col-md-6" role="search">
                         <div class="input-group col-lg-12">
                             <input type="text" class="form-control input-lg" placeholder="Search" />
                             <span class="input-group-btn">
@@ -41,9 +68,33 @@ and open the template in the editor.
                     </form>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
                     </ul>
                 </div>
+            </nav>
+
+            <nav class="navbar navbar-custom-bottom navbar-fixed-bottom">
+                <div class="container-fluid row">
+                    <ul class="nav navbar-nav navbar-audio-button col-md-3">
+                        <li><a href="#"><span class="glyphicon glyphicon-step-backward"></span></a></li>
+                        <li><a href="#" onclick="buttonStopPress()"><span class="glyphicon glyphicon-stop"></span></a></li>
+                        <li><a href="#" onclick="buttonPlayPress()"><span id="play-pause-button" class="glyphicon glyphicon-play"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-step-forward"></span></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav nav-center col-md-6">
+                        <li><img src="../../resource/cover.jpg"/></li>
+                        <ul class="nav-center-info">
+                            <li><p>11:11 - Taeyeon</p></li>
+                        </ul>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-audio-button col-md-3">
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-volume-up"></span></a>
+                        </li>
+                        <li><a href="#"><span class="glyphicon glyphicon-list"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-remove"></span></a></li>                          
+                    </ul>
+                </div>                
             </nav>
         </div>
     </body>
