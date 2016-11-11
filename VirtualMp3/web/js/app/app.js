@@ -3,9 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-angular.module('App',['ngRoute']).config(function($routeProvider){
-    $routeProvider.when('/',{
-        templateUrl: '/template/welcomeTest.html'
-    });
-});
+//angular.module('App',
+//        ['ngRoute'])
+//        .config(function ($routeProvider) {
+//            $routeProvider.when('/', {
+//                templateUrl: '/template/welcomeTestAA.html'
+//            });
+//        });
 
+angular.module('App',
+    ['ngRoute']
+    ).config(function($routeProvider) {
+        $routeProvider.when('/p',
+        {
+            templateUrl: '/templates/posts/index.html'
+        });
+});
