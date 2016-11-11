@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+
+<html>
+    <head>
+        <title>Virtual Mp3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/angular-route.min.js" type="text/javascript"></script>
+        
+        <!--SCRIPT-->
+        <script src="js/domController.js" type="text/javascript"></script>
+        
+        <script src="js/app/app.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div>
+            <img src="resource/testCover/c1.jpg" id="bg"/>
+            <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img alt="Brand" src="resource/logo.png"/>
+                        </a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="#">About</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left search-custom col-md-6" role="search">
+                        <div class="input-group col-lg-12">
+                            <input type="text" class="form-control input-lg" placeholder="Search" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" type="button">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--START CONTENT-->
+            
+            <div id="contentView" class="container-fluid" ng-view>
+                
+            </div>
+            
+            <!--END CONTENT-->
+            <nav class="navbar navbar-custom-bottom navbar-fixed-bottom">
+                <div class="container-fluid row">
+                    <ul class="nav navbar-nav navbar-audio-button col-md-3">
+                        <li><a href="#"><span class="glyphicon glyphicon-step-backward"></span></a></li>
+                        <li><a href="#" onclick="buttonStopPress()"><span class="glyphicon glyphicon-stop"></span></a></li>
+                        <li><a href="#" onclick="buttonPlayPress()"><span id="play-pause-button" class="glyphicon glyphicon-play"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-step-forward"></span></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav nav-center col-md-6">
+                        <li><img src="resource/cover.jpg"/></li>
+                        <ul class="nav-center-info">
+                            <li><p>11:11 - Taeyeon</p></li>
+                        </ul>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-audio-button col-md-3">
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-volume-up"></span></a>
+                        </li>
+                        <li><a href="#"><span class="glyphicon glyphicon-list"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-remove"></span></a></li>                          
+                    </ul>
+                </div>                
+            </nav>
+        </div>
+    <!--SIGN UP DROP DOWN-->
+    <ul class="dropdown-menu">
+        <li>
+            <form>
+                <div class="form-group">
+                    <label ></label>
+                    <input type="text" id="usernameField" >
+                </div>
+            </form>
+        </li>
+    </ul>
+    </body>
+</html>

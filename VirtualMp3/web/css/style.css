@@ -102,3 +102,11 @@
 .navbar-custom-bottom .nav-center .nav-center-info > li > p {
     color: #ffd1dc;
 }
+
+
+/*Phong*/
+#contentView{
+    position: relative;
+    top: 3.9em;
+    background-color: rgba(255,255,255,1);
+}
