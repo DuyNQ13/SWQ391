@@ -64,11 +64,21 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.navbar-custom-bottom .navbar-audio-button {
+.navbar-custom-bottom .navbar-audio-button-left {
+    padding-left: 10%;
+}
+
+.navbar-custom-bottom .navbar-audio-button-right {
     padding-left: 5%;
 }
 
-.navbar-custom-bottom .navbar-audio-button > li > a > span {
+.navbar-custom-bottom .navbar-audio-button-left > li > a > span {
+    color: #FFD1DC;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.navbar-custom-bottom .navbar-audio-button-right > li > a > span {
     color: #FFD1DC;
     font-weight: bold;
     font-size: 17px;
@@ -76,7 +86,7 @@
 
 .nav-center {
     background-color: rgba(0, 0, 0, 0.3);
-    padding: 0.5%;    
+    padding: 0.45%;    
 }
 
 .navbar-custom-bottom .nav-center > li > img {
