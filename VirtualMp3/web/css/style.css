@@ -55,9 +55,10 @@
     border-bottom-right-radius: 10px;
 }
 
-.search-custom .input-group .btn > i {
+.search-custom .input-group .btn .fa-search {
     color: #FFD1DC;
-    top: -2px;
+    position: relative;
+    bottom: 0.3em;
 }
 
 .navbar-custom-bottom {
@@ -101,4 +102,17 @@
 
 .navbar-custom-bottom .nav-center .nav-center-info > li > p {
     color: #ffd1dc;
+}
+
+.album-list .row {
+    position: relative;
+    left: 2%;
+}
+
+.album-list .row .col-md-2 {
+    margin: 7%;
+}
+
+.album-list .row .col-md-2 > img {
+    width: 110%;
 }
