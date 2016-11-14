@@ -10,6 +10,6 @@ angular.module('index', [])
 
 function indexController($scope, $location,$log) {
     $scope.LogLocation = function () {
-        $log.log($location.path())
+        $log.log($location.path());
     };
 }
