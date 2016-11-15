@@ -5,25 +5,15 @@
  */
 
 
-var state = 'stop';
+var state = 'pause';
 function buttonPlayPress() {
-    if (state === 'stop') {
+    if (state === 'pause') {
         state = 'play';
-        $('#play-pause-button').removeClass('glyphicon-play');
-        $('#play-pause-button').addClass('glyphicon-pause');
-    } else if (state === 'play' || state === 'resume') {
+        $('#play-pause-button').removeClass('fa-play');
+        $('#play-pause-button').addClass('fa-pause');
+    } else if (state === 'play') {
         state = 'pause';
-        $('#play-pause-button').removeClass('glyphicon-pause');
-        $('#play-pause-button').addClass('glyphicon-play');
-    } else if (state === 'pause') {
-        state = 'resume';
-        $('#play-pause-button').removeClass('glyphicon-play');
-        $('#play-pause-button').addClass('glyphicon-pause');
+        $('#play-pause-button').removeClass('fa-pause');
+        $('#play-pause-button').addClass('fa-play');
     }
-}
-
-function buttonStopPress() {
-    state = 'stop';
-    $('#play-pause-button').removeClass('glyphicon-pause');
-    $('#play-pause-button').addClass('glyphicon-play');
 }

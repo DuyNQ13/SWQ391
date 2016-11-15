@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 angular.module('App',
-        ['index','ngRoute'])
+        ["SongService",'index',"NavBotCtrl",'ngRoute'])
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider
                     .when('/', {

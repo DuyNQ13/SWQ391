@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.naming.NamingException;
-import sample.utils.DBUtils;
+import utils.DBUtils;
 
 /**
  *

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sample.utils;
+package utils;
 
 import java.io.Serializable;
 import java.sql.Connection;
@@ -18,7 +18,7 @@ public class DBUtils implements Serializable{
   public static Connection makeConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         String url = "jdbc:sqlserver://localhost:1433;databaseName=VMP3";
-        Connection con = DriverManager.getConnection(url, "sa" , "041296");      
+        Connection con = DriverManager.getConnection(url, "sa" , "1234");      
         return con;
     }
 }
