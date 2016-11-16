@@ -1,42 +1,46 @@
+/* BACKGROUND */
 #bg {
     position: fixed; 
     top: 0; 
     left: 0; 
     min-width: 100%;
     min-height: 100%;
+    z-index: 0;
 }
+/* END BACKGROUND */
 
-.navbar-custom {
+/* TOP NAVBAR */
+.navbar-top-custom {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.navbar-custom .navbar-header > a {
+.navbar-top-custom .navbar-header {
     padding-top: 0px;
 }
 
-.navbar-custom .navbar-header > a > img {
+.navbar-top-custom .navbar-header > img {
     width: 88px;
     height: 50px;
 }
 
-.navbar-custom .navbar-nav > li > a {
+.navbar-top-custom .navbar-nav > li > a {
     color: #FFD1DC;
     font-weight: bold;
     font-size: 17px;
 }
 
-.navbar-custom .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
-    background-color: #000;
+.navbar-top-custom .navbar-nav > li > a:hover, .navbar-top-custom .navbar-nav > li > a:focus {
+    background-color: #FFD1DC;
+    color: #000;
 }
 
 .search-custom {
-    width: 58.5%;
+    width: 59.5%;
     margin-left: 3%;
-    margin-righ: 3%;
 }
 
 .search-custom .input-group .input-lg {
-    height: 2em;
+    height: 1.9em;
     box-shadow: none !important;
     border: #FFD1DC solid 3px;
     border-right: 0px;
@@ -46,7 +50,7 @@
 
 .search-custom .input-group .btn {
     background-color: #fff;
-    height: 2em;
+    height: 1.9em;
     outline: none;
     box-shadow: none !important;
     border: #FFD1DC solid 3px;
@@ -60,26 +64,38 @@
     position: relative;
     bottom: 0.3em;
 }
+/* END TOP NAVBAR */
 
-.navbar-custom-bottom {
+/* BOTTOM NAVBAR */
+.navbar-bottom-custom {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.navbar-custom-bottom .navbar-audio-button-left {
+.navbar-bottom-custom .navbar-nav > li > a:hover, .navbar-bottom-custom .navbar-nav > li > a:focus {
+    background-color: #FFD1DC;
+    color: #000;
+}
+
+.navbar-bottom-custom .navbar-audio-button-left {
     padding-left: 10%;
 }
 
-.navbar-custom-bottom .navbar-audio-button-right {
-    padding-left: 5%;
-}
-
-.navbar-custom-bottom .navbar-audio-button-left > li > a > span {
+.navbar-bottom-custom .navbar-audio-button-left > li > a {
     color: #FFD1DC;
     font-weight: bold;
     font-size: 17px;
 }
 
-.navbar-custom-bottom .navbar-audio-button-right > li > a > span {
+.navbar-bottom-custom .navbar-audio-button-left .fa-play, .navbar-bottom-custom .navbar-audio-button-left .fa-pause {
+    width: 46px;
+    padding-left: 35%;
+}
+
+.navbar-bottom-custom .navbar-audio-button-right {
+    padding-left: 5%;
+}
+
+.navbar-bottom-custom .navbar-audio-button-right > li > a {
     color: #FFD1DC;
     font-weight: bold;
     font-size: 17px;
@@ -87,10 +103,10 @@
 
 .nav-center {
     background-color: rgba(0, 0, 0, 0.3);
-    padding: 0.45%;    
+    padding: 0.39%;    
 }
 
-.navbar-custom-bottom .nav-center > li > img {
+.navbar-bottom-custom .nav-center > li > img {
     width: 40px;
     height: 40px;
 }
@@ -100,10 +116,23 @@
     margin-left: 2%;
 }
 
-.navbar-custom-bottom .nav-center .nav-center-info > li > p {
+.navbar-bottom-custom .nav-center .nav-center-info > li > p {
     color: #ffd1dc;
 }
+/* END BOTTOM NAVBAR */
 
+/* CONTENT */
+.content {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    position: absolute;
+    z-index: 1;
+}
+/* END CONTENT */
+
+<<<<<<< HEAD
 
 /*Phong*/
 #contentView{
@@ -112,134 +141,61 @@
     background-color: rgba(255,255,255,1);
 }
 /*.album-list .row {
+=======
+/* ALBUMS PAGE */
+.album {
+    width: 18%;
+    float: left;
+    margin: 3.5%;
+    border: solid 2px #000;
+    border-radius: 5px;
+    box-shadow:inset 1px 1px 40px 0 rgba(0,0,0,.45);
+}
+
+.album > p > a {
+    text-decoration: none;
+}
+
+.album .image-container > a > img {
+    width: 100%;
+    height: auto;
+    border-bottom: solid 2px #000;
+}
+
+.image-container {
+>>>>>>> refs/remotes/origin/Duy
     position: relative;
-    left: 2%;
+    width: 100%;
+    height: 100%;
 }
 
-.album-list .row .col-md-2 {
-    margin: 7%;
-}*/
-
-/* ============================================================
-  GLOBAL
-============================================================ */
-.effects {
-  margin-left: 15%;
-  margin-right: 10%;
-  margin-top: 8%;
-}
-.effects .img {
-  position: relative;
-  float: left;
-  margin-bottom: 5px;
-  width: 20%;
-  overflow: hidden;
-}
-.effects .img:nth-child(n) {
-  margin-right: 5%;
-}
-/*.effects .img:first-child {
-  margin-left: -15px;
-}*/
-/*.effects .img:last-child {
-  margin-right: 0;
-}*/
-.effects .img img {
-  display: block;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  height: auto;
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #fff;
 }
 
-.overlay {
-  display: block;
-  position: absolute;
-  z-index: 20;
-  background: rgba(0, 0, 0, 0.8);
-  overflow: hidden;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+.image-container:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, 0.6);
 }
 
-a.close-overlay {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 100;
-  width: 45px;
-  height: 45px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 45px;
-  text-align: center;
-  background-color: #000;
-  cursor: pointer;
+.play-button {
+    position: absolute;
+    font-size: 3em;
+    margin: 35%;
+    margin-left: 40%;
 }
-a.close-overlay.hidden {
-  display: none;
-}
+/* END ALBUMS PAGE */
 
-a.expand {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  width: 60px;
-  height: 60px;
-  border: solid 5px #fff;
-  text-align: center;
-  color: #fff;
-  line-height: 50px;
-  font-weight: 700;
-  font-size: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-  border-radius: 30px;
+/* PROFILE PAGE*/            
+user-profile-page {
+    width: 60%;
+    height: auto;
+    border: solid 2px #000;
 }
-
-/* ============================================================
-  EFFECT 5 - ICON BORDER ANIMATE
-============================================================ */
-#effect-5 .overlay {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-}
-#effect-5 .overlay a.expand {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-#effect-5 .img.hover .overlay {
-  opacity: 1;
-}
-#effect-5 .img.hover .overlay a.expand {
-  width: 60px;
-  height: 60px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-  border-radius: 30px;
-}
+/* END PROFILE PAGE*/
