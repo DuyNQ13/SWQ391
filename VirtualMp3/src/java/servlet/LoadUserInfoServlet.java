@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package servlet;
 
 import java.io.IOException;
@@ -16,15 +17,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
-import song.SongDAO;
-import song.SongDTO;
+import user.UserDAO;
+import user.UserDTO;
 
 /**
  *
- * @author Phong
+ * @author quocbao0412
  */
-public class SongServlet extends HttpServlet {
-
+public class LoadUserInfoServlet extends HttpServlet {
+    private final String homePage = "";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,38 +37,28 @@ public class SongServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/javascript;charset=UTF-8");
-
-        String rawId = request.getParameter("id");
-        String callBackMethods = request.getParameter("callback");
+        response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            if (rawId != null) {
-                int id = Integer.parseInt(rawId);
-                SongDTO song = new SongDAO().searchSong(id);
-                out.append(callBackMethods);
-                out.append("("+getJson(song).toJSONString()+");");
-            } else {
-                response.setStatus(403);
-            }
-            out.flush();
-        } catch (SQLException ex) {
-            Logger.getLogger(SongServlet.class.getName()).log(Level.SEVERE, null, ex);
+            String username = request.getParameter("");
+            String password = request.getParameter("");
+            UserDAO dao = new UserDAO();
+            UserDTO dto = dao.checkLogin(username, password);
+//            if (dto == null) {
+//                request.setAttribute("LOGIN", "False");
+//            } else {
+//                request.setAttribute("USER", dto);
+//            }
+            JSONObject jObj = new JSONObject();
+            jObj.put("result", false);
+//            jObj.put(dto, dao)
+            response.sendRedirect(homePage);
         } catch (NamingException ex) {
-            Logger.getLogger(SongServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoadUserInfoServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoadUserInfoServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(SongServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoadUserInfoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-    }
-
-    private JSONObject getJson(SongDTO song) {
-        JSONObject jObj = new JSONObject();
-        jObj.put("link", song.getLink());
-        jObj.put("cover",song.getCover());
-        jObj.put("name", song.getSong());
-        jObj.put("artist", song.getSinger());
-        
-        return jObj;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

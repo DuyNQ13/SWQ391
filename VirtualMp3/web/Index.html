@@ -33,7 +33,7 @@ and open the template in the editor.
 
         <script src="js/app/service/SongService.js" type="text/javascript"></script>
         <script src="js/app/controller/IndexController.js" type="text/javascript"></script>
-        <script src="js/app/controller/NavBottomPlayerController.js" type="text/javascript"></script>
+        <script src="js/app/controller/SongPlayerController.js" type="text/javascript"></script>
         <script src="js/app/app.js" type="text/javascript"></script>
     </head>
     <body ng-app="App">
@@ -127,21 +127,21 @@ and open the template in the editor.
             <!--</div>-->
 
             <!--END CONTENT-->
-            <nav class="navbar navbar-custom-bottom navbar-fixed-bottom" ng-controller="PlayerController">
+            <nav class="navbar navbar-custom-bottom navbar-fixed-bottom" ng-controller="SongPlayerController">
                 <div class="container-fluid row">
                     <ul class="nav navbar-nav navbar-audio-button-left col-md-3">
                         <li><a href="#"><span class="fa fa-step-backward" ></span></a></li>
                         <li>
-                            <a href="#" onclick="buttonPlayPress()">
+                            <a href="#" onclick="buttonPlayPress()" ng-click="play()">
                                 <span id="play-pause-button" class="fa fa-play"></span>
                             </a>
                         </li>
                         <li><a href="#"><span class="fa fa-step-forward"></span></a></li>
                     </ul>
                     <ul class="nav navbar-nav nav-center col-md-6">
-                        <li><img src="{{cover}}" ng-click="getSong(8)"/></li>
+                        <li><img src="{{song.cover}}" ng-click="getSong(8)"/></li>
                         <ul class="nav-center-info">
-                            <li><p>{{name}} - {{artist}}</p></li>
+                            <li><p>{{song.name}} - {{song.artist}}</p></li>
                         </ul>
                     </ul>
                     <ul class="nav navbar-nav navbar-audio-button-right col-md-3">

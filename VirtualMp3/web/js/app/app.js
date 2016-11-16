@@ -4,7 +4,12 @@
  * and open the template in the editor.
  */
 angular.module('App',
-        ["SongService",'index',"NavBotCtrl",'ngRoute'])
+        [
+            "SongService",
+            "index",
+            "SongPlayerControllerModule",
+            "ngRoute"
+        ])
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider
                     .when('/', {
