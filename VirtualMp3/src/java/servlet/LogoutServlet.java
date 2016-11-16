@@ -7,25 +7,18 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Phong
+ * @author quocbao0412
  */
-public class ProcessServlet extends HttpServlet {
-    private final String homePage = "";
-   // private final String loginServlet = "";
-   // private final String loadRoomTypeServlet = "";
-   // private final String loadRoomServlet = "";
-    //private final String orderServlet = "";
-    //private final String searchRoomServlet = "";
-    //private final String checkoutServlet = "";
-    private final String logoutServlet = "LogoutServlet";
+public class LogoutServlet extends HttpServlet {
+  private final String homePage = "";
   /**
    * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
    * methods.
@@ -38,30 +31,13 @@ public class ProcessServlet extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     response.setContentType("text/html;charset=UTF-8");
-    try(PrintWriter out = response.getWriter()) {
-            String button = request.getParameter("btnAction");
-            String url = homePage;
-            
-            if (button == null) {
-                
-            } else if (button.equals("Login")) {
-                
-            } else if (button.equals("loadRoomType")){
-                
-            } else if (button.equals("loadRoom")){
-                
-            } else if (button.equals("Order")){
-                
-            } else if (button.equals("SearchRoom")){
-                
-            } else if (button.equals("Pay")){
-                
-            } else if (button.equals("Logout")){
-                url = logoutServlet;
+        try (PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession(false);
+            if (session != null) {
+                session.invalidate();
             }
-            
-            RequestDispatcher rd = request.getRequestDispatcher(url);
-            rd.forward(request, response);
+            request.logout();
+            response.sendRedirect(homePage);
         }
   }
 

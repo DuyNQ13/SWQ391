@@ -4,9 +4,33 @@
         <servlet-name>ProcessServlet</servlet-name>
         <servlet-class>servlet.ProcessServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadSongServlet</servlet-name>
+        <servlet-class>servlet.LoadSongServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadUserInfoServlet</servlet-name>
+        <servlet-class>servlet.LoadUserInfoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProcessServlet</servlet-name>
         <url-pattern>/ProcessServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadSongServlet</servlet-name>
+        <url-pattern>/LoadSongServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadUserInfoServlet</servlet-name>
+        <url-pattern>/LoadUserInfoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
