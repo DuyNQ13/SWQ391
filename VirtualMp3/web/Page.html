@@ -60,7 +60,7 @@ and open the template in the editor.
             <!-- START CONTENT -->
             <div class="content" ng-view>
                 <!-- ALBUM LIST -->                
-                <div>
+                <div class="hidden">
                     <h1>ALBUM LIST</h1>
                     <div class="album">
                         <div class="image-container">
@@ -139,8 +139,8 @@ and open the template in the editor.
 
                 <!-- PROFILE PAGE -->
                 <h1>PROFILE PAGE</h1>
-                <div class="container-fluid user-profile-page hidden">
-
+                <div class="user-profile-page">
+                    <img src="resource/avatar.jpg">
                 </div>
                 <!-- END PROFILE PAGE -->
             </div>
@@ -157,7 +157,16 @@ and open the template in the editor.
                     <ul class="nav navbar-nav nav-center col-md-6">
                         <li><img src="resource/cover.jpg"/></li>
                         <ul class="nav-center-info">
-                            <li><p>Title - Artist</p></li>
+                            <li><span>Title - Artist</span></li>
+                            <li>
+                                <div class="time-passed">00:00</div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" 
+                                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">                                   
+                                    </div>
+                                </div>
+                                <div class="duration">04:36</div>
+                            </li>
                         </ul>
                     </ul>
                     <ul class="nav navbar-nav navbar-audio-button-right col-md-3">
