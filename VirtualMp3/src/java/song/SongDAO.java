@@ -129,7 +129,7 @@ public class SongDAO implements Serializable{
         
     }
   
-  public SongDTO searchSong(int ID_Song) throws SQLException, NamingException, ClassNotFoundException {
+  public SongDTO loadSong(int ID_Song) throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;
@@ -180,8 +180,8 @@ public class SongDAO implements Serializable{
                               "SET NumOfLike = ?\n" +
                               "WHERE ID = ?";
                 stm = con.prepareStatement(sql);
-                SongDTO dto = searchSong(ID_Song);
-                stm.setInt(1, dto.getNumOfLike());
+                SongDTO dto = loadSong(ID_Song);
+                stm.setInt(1, dto.getNumOfLike() + 1);
                 stm.setInt(1, dto.getID());
                 
                 int row = stm.executeUpdate();
@@ -211,8 +211,8 @@ public class SongDAO implements Serializable{
                               "SET NumOfListen = ?\n" +
                               "WHERE ID = ?";
                 stm = con.prepareStatement(sql);
-                SongDTO dto = searchSong(ID_Song);
-                stm.setInt(1, dto.getNumOfListen());
+                SongDTO dto = loadSong(ID_Song);
+                stm.setInt(1, dto.getNumOfListen() + 1);
                 stm.setInt(1, dto.getID());
                 
                 int row = stm.executeUpdate();

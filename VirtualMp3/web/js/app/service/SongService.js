@@ -10,7 +10,7 @@ angular.module("SongService", [])
 
 function SongService($http) {
     this.getSong = function (id, getSongSuccess, getSongError) {
-        var url = "http://localhost:8080/VirtualMp3/song?id=8";
+        var url = "http://localhost:8080/VirtualMp3/song?id="+id;
         
         var successCallback = function(response){
             getSongSuccess(response.data);

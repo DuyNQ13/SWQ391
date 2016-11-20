@@ -8,15 +8,20 @@ angular.module('App',
             "SongService",
             "index",
             "SongPlayerControllerModule",
+            'PlaylistModule',
             "ngRoute"
         ])
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider
                     .when('/', {
-                        templateUrl: 'template/welcomeTest.html'
+                        redirectTo: '/home'
                     })
                     .when("/home", {
                         templateUrl: 'template/Home.html',
+                        controller:HomeController
+                    })
+                    .when("/album", {
+                        templateUrl: 'template/album.html'
                     });
 //            $locationProvider.html5Mode(true);
         });

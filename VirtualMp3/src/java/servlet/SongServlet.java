@@ -43,7 +43,7 @@ public class SongServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             if (rawId != null) {
                 int id = Integer.parseInt(rawId);
-                SongDTO song = new SongDAO().searchSong(id);
+                SongDTO song = new SongDAO().loadSong(id);
                 out.append(callBackMethods);
                 out.append("("+getJson(song).toJSONString()+");");
             } else {

@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package servlet;
 
+import Playlist.PlaylistDAO;
+import Playlist.PlaylistDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.NamingException;
@@ -16,15 +18,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import song.SongDAO;
-import song.SongDTO;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import user.UserDAO;
+import user.UserDTO;
 
 /**
  *
- * @author quocbao0412
+ * @author Phong
  */
-public class LoadSongServlet extends HttpServlet {
-    private final String homePage = "";
+public class HomeServlet extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,25 +40,41 @@ public class LoadSongServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/javascript;charset=UTF-8");
+
+        String callBackMethods = request.getParameter("callback");
+        
         try (PrintWriter out = response.getWriter()) {
-            String ID_Str = request.getParameter("");
-            int ID_Song = Integer.parseInt(ID_Str);
-            SongDAO dao = new SongDAO();
-            SongDTO dto = dao.searchSong(ID_Song);
-            if (dto == null) {
-                request.setAttribute("LOGIN", "False");
-            } else {
-                request.setAttribute("USER", dto);
-            }
-            response.sendRedirect(homePage);
+                
+                JSONArray jArray = new JSONArray();
+                List<PlaylistDTO> topPlaylist = new PlaylistDAO().getTopPlaylists();
+                
+                for(PlaylistDTO playlist : topPlaylist){
+                    UserDTO user = new UserDAO().loadByID(playlist.getID_User());
+                    jArray.add(getJson(playlist,user));
+                }
+                out.append(callBackMethods);
+                out.append("("+jArray.toJSONString()+");");
+            out.flush();
         } catch (SQLException ex) {
-            Logger.getLogger(LoadSongServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SongServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NamingException ex) {
-            Logger.getLogger(LoadSongServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SongServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LoadSongServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SongServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    private JSONObject getJson(PlaylistDTO playlist,UserDTO user) {
+        JSONObject jObj = new JSONObject();
+        
+        jObj.put("id", playlist.getID());
+        jObj.put("name",playlist.getName());
+        jObj.put("likes", playlist.getNumOfLike());
+        jObj.put("listen", playlist.getNumOfListen());
+        jObj.put("username", user.getUsername());
+        
+        return jObj;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

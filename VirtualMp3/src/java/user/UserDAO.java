@@ -147,4 +147,41 @@ public class UserDAO implements Serializable{
         }
         return false;
     }
+     
+     public UserDTO loadByID(int ID) throws SQLException, ClassNotFoundException{
+       Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        
+        try {
+            con = DBUtils.makeConnection();
+            if (con != null) {
+                String sql = "Select * From User Where ID = ?";
+                stm = con.prepareStatement(sql);
+                stm.setInt(1, ID);
+                
+                rs = stm.executeQuery();
+ 
+                if (rs.next()) {
+                    String un = rs.getString("Username");
+                    String avatar = rs.getString("avatar");
+                    String pass = rs.getString("Password");
+                    UserDTO dto = new UserDTO(ID, un, avatar, pass);
+                    return dto;
+                }
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+           
+        }
+        return null;
+     }
 }

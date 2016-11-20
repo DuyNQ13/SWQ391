@@ -5,19 +5,27 @@
  */
 package servlet;
 
-import resource.ResourceStrings;
+import Playlist.PlaylistDAO;
+import Playlist.PlaylistDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.json.simple.JSONObject;
+import user.UserDAO;
+import user.UserDTO;
 
 /**
  *
  * @author Phong
  */
-public class IndexServlet extends HttpServlet {
+public class PlaylistServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,17 +38,37 @@ public class IndexServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String contentUrl =                //Don't change
-                ResourceStrings.INDEX_PAGE;//Change
-        //----------CODE START---------
+        response.setContentType("text/javascript;charset=UTF-8");
+
+        String name = request.getParameter("name");
+        String callBackMethods = request.getParameter("callback");
         
-                    
+        try (PrintWriter out = response.getWriter()) {
+                PlaylistDTO playlist = new PlaylistDAO().searchPlaylist(name);
+                UserDTO user = new UserDAO().loadByID(playlist.getID_User());
+                
+                out.append(callBackMethods);
+                out.append("("+getJson(playlist,user).toJSONString()+");");
+            out.flush();
+        } catch (SQLException ex) {
+            Logger.getLogger(SongServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NamingException ex) {
+            Logger.getLogger(SongServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SongServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private JSONObject getJson(PlaylistDTO playlist,UserDTO user) {
+        JSONObject jObj = new JSONObject();
         
-        //----------CODE END-----------
-        //Don't change
-        request.setAttribute("contentUrl", contentUrl);
-        request.getRequestDispatcher(ResourceStrings.LAYOUT_PAGE)
-                .forward(request, response);
+        jObj.put("id", playlist.getID());
+        jObj.put("name",playlist.getName());
+        jObj.put("likes", playlist.getNumOfLike());
+        jObj.put("listen", playlist.getNumOfListen());
+        jObj.put("username", user.getUsername());
+        
+        return jObj;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

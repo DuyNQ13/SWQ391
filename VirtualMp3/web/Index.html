@@ -30,16 +30,13 @@ and open the template in the editor.
 
         <!--SCRIPT-->
         <script src="js/domController.js" type="text/javascript"></script>
-<<<<<<< HEAD:VirtualMp3/web/Index.html
-
         <script src="js/app/service/SongService.js" type="text/javascript"></script>
+        <script src="js/app/service/PlaylistService.js" type="text/javascript"></script>
         <script src="js/app/controller/IndexController.js" type="text/javascript"></script>
+        <script src="js/app/controller/PlaylistController.js" type="text/javascript"></script>
         <script src="js/app/controller/SongPlayerController.js" type="text/javascript"></script>
         <script src="js/app/app.js" type="text/javascript"></script>
-=======
-        <script src="js/jquery-1.9.1.min.js"></script>
-        <script src="js/modernizr.js"></script>        
->>>>>>> refs/remotes/origin/Duy:VirtualMp3/web/Page.html
+
     </head>
     <body ng-app="App">
         <div>
@@ -72,120 +69,10 @@ and open the template in the editor.
                 </div>
             </nav>
             <!-- END TOP NAVBAR -->
-
-<<<<<<< HEAD:VirtualMp3/web/Index.html
-            <div ng-view class="container-fluid " style="position: relative;top: 3.5em;">
-
-            </div>
             
-            <!--<div class="container-fluid" ng-view>-->
-                <!-- HOME -->
-                <!--                <div class="container album-list">
-                                    <ul class="row">
-                                        <li class="col-md-2">
-                                            <div class="thumb">
-                                                <a href="#">
-                                                    <span class="play">&#9658;</span>
-                                                    <div class="overplay"></div>
-                                                </a>
-                                                <img class="img-circle" src="resource/albumCover/1.jpg"/>
-                                            </div>
-                                        </li>
-                                        <li class="col-md-2">
-                                            <img class="img-circle" src="resource/albumCover/2.jpg"/>
-                                        </li>
-                                        <li class="col-md-2">
-                                            <img class="img-circle" src="resource/albumCover/3.jpg"/>
-                                        </li>
-                                    </ul>
-                                </div>-->
-                <div id="effect-1" class="effects clearfix">
-                    <div class="img">
-                        <img src="resource/albumCover/1.jpg" alt="">
-                        <div class="overlay">
-                            <a href="#" class="expand">+</a>
-                            <a class="close-overlay hidden">x</a>
-=======
             <!-- START CONTENT -->
             <div class="content" ng-view>
-                <!-- ALBUM LIST -->                
-                <div>
-                    <h1>ALBUM LIST</h1>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/1.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/2.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/3.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/4.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/5.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
->>>>>>> refs/remotes/origin/Duy:VirtualMp3/web/Page.html
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/6.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/7.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/8.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                </div>
-                <!-- END ALBUM LIST -->
+                
 
                 <!-- PROFILE PAGE -->
                 <h1>PROFILE PAGE</h1>
@@ -195,41 +82,24 @@ and open the template in the editor.
                 <!-- END PROFILE PAGE -->
             </div>
             <!--END CONTENT-->
-<<<<<<< HEAD:VirtualMp3/web/Index.html
-            <nav class="navbar navbar-custom-bottom navbar-fixed-bottom" ng-controller="SongPlayerController">
-                <div class="container-fluid row">
-                    <ul class="nav navbar-nav navbar-audio-button-left col-md-3">
-                        <li><a href="#"><span class="fa fa-step-backward" ></span></a></li>
-                        <li>
-                            <a href="#" onclick="buttonPlayPress()" ng-click="play()">
-                                <span id="play-pause-button" class="fa fa-play"></span>
-                            </a>
-                        </li>
-                        <li><a href="#"><span class="fa fa-step-forward"></span></a></li>
-=======
 
             <!-- BOTTOM NAVBAR -->
-            <nav class="navbar navbar-bottom-custom navbar-fixed-bottom">
+            <nav class="navbar navbar-bottom-custom navbar-fixed-bottom" ng-controller="SongPlayerController">
                 <div class="container-fluid row">
                     <ul class="nav navbar-nav navbar-audio-button-left col-md-3">
-                        <li><a href="#" class="fa fa-step-backward"></a></li>
-                        <li><a href="#" onclick="buttonPlayPress()" id="play-pause-button" class="fa fa-play"></a></li>
-                        <li><a href="#" class="fa fa-step-forward"></a></li>
->>>>>>> refs/remotes/origin/Duy:VirtualMp3/web/Page.html
+                        <li><a class="fa fa-step-backward"></a></li>
+                        <li><a onclick="buttonPlayPress()" ng-click="playBtn()" id="play-pause-button" class="fa fa-play"></a></li>
+                        <li><a class="fa fa-step-forward"></a></li>
                     </ul>
                     <ul class="nav navbar-nav nav-center col-md-6">
-                        <li><img src="{{song.cover}}" ng-click="getSong(8)"/></li>
+                        <li><img src="{{song.cover}}" ng-click="getSong(13)"/></li>
                         <ul class="nav-center-info">
-<<<<<<< HEAD:VirtualMp3/web/Index.html
                             <li><p>{{song.name}} - {{song.artist}}</p></li>
-=======
-                            <li><p>Title - Artist</p></li>
->>>>>>> refs/remotes/origin/Duy:VirtualMp3/web/Page.html
                         </ul>
                     </ul>
                     <ul class="nav navbar-nav navbar-audio-button-right col-md-3">
                         <li><a href="#" class="fa fa-volume-up"></a></li>
-                        <li><a href="#" class="fa fa-list"></a></li>
+                        <li><a href="#/album" class="fa fa-list"></a></li>
                         <li><a href="#" class="fa fa-remove"></a></li>                          
                     </ul>
                 </div>                
@@ -247,11 +117,6 @@ and open the template in the editor.
                 </form>
             </li>
         </ul>
-<<<<<<< HEAD:VirtualMp3/web/Index.html
-=======
         <!--END SIGN UP DROP DOWN-->
-
-
->>>>>>> refs/remotes/origin/Duy:VirtualMp3/web/Page.html
     </body>
 </html>

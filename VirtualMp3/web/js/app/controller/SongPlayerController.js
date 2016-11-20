@@ -42,7 +42,7 @@ function NavBotCtrl($scope, SongService) {
         alert("Error while getting song");
     }
 
-    $scope.play = function () {
+    $scope.playBtn = function () {
         console.log($scope.audioEl);
         console.log($scope.link);
         if ($scope.state == "pause") {
@@ -68,5 +68,9 @@ function NavBotCtrl($scope, SongService) {
         $scope.song = song;
         $scope.audioEl.src = $scope.song.link;
         $scope.state = "pause";
+    }
+    
+    $scope.audioEl.durationchange = function(){
+        
     }
 }

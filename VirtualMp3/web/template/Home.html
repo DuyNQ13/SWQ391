@@ -4,4 +4,16 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<h2>Welcome[Home]</h2>
+<!-- ALBUM LIST -->                
+<div ng-repeat="playlist in topPlaylists">
+    <div class="album">
+        <div class="image-container">
+            <a href="#">
+                <img src="{{playlist.cover}}"/>
+                <div class="overlay"><span class="play-button">&#9658;</span></div>
+            </a>
+        </div>
+        <p><br/><a href="#">{{playlist.name}}</a> <br/> {{playlist.username}}</p>                       
+    </div>
+</div>
+<!-- END ALBUM LIST -->
