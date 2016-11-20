@@ -67,6 +67,10 @@
 /* END TOP NAVBAR */
 
 /* BOTTOM NAVBAR */
+ul {
+    list-style-type: none;
+}
+
 .navbar-bottom-custom {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -112,13 +116,38 @@
 }
 
 .nav-center-info {
-    width: 80%;
     margin-left: 2%;
 }
 
-.navbar-bottom-custom .nav-center .nav-center-info > li > p {
+.navbar-bottom-custom .nav-center .nav-center-info > li > span {
     color: #ffd1dc;
 }
+
+.progress {
+    height: 5px;
+    width: 80%;
+    background-color: #999;
+    float: left;
+    margin-bottom: 0;
+    margin-top: 1.5%;
+}
+
+.progress .progress-bar {
+    background-color: #FFD1DC;
+}
+
+.time-passed {
+    float: left;
+    color: #FFD1DC;
+    margin-right: 3%;
+}
+
+.duration {
+    float: left;
+    margin-left: 3%;
+    color: #fff;
+}
+
 /* END BOTTOM NAVBAR */
 
 /* CONTENT */
