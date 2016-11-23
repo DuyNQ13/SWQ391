@@ -1,3 +1,18 @@
+html, body {
+    height:100%;
+}
+/* HIDDEN SCROLLBAR */
+body::-webkit-scrollbar { width: 0 !important }
+body { -ms-overflow-style: none; }
+body { overflow: -moz-scrollbars-none; }
+
+a:hover {
+    text-decoration: none;
+}
+
+h1,h2 {
+    color: #FFD1DC;
+}
 /* BACKGROUND */
 #bg {
     position: fixed; 
@@ -152,8 +167,9 @@ ul {
 
 /* CONTENT */
 .content {
+    width: 80%;
+    height: 100%;
     margin-top: 5%;
-    margin-bottom: 5%;
     margin-left: 10%;
     margin-right: 10%;
     position: absolute;
@@ -161,30 +177,64 @@ ul {
 }
 /* END CONTENT */
 
-/* ALBUMS PAGE */
-.album {
+/* HOME PAGE */
+.home-page {
+    position: absolute;
+    width: 100%;
+}
+
+/* PLAYLIST */
+.playlist-group {
+    position: absolute;
+    height: 100%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.playlist {
     width: 18%;
+    height: 100%;
     float: left;
-    margin: 3.5%;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
     border: solid 2px #000;
     border-radius: 5px;
     box-shadow:inset 1px 1px 40px 0 rgba(0,0,0,.45);
 }
 
-.album > p > a {
-    text-decoration: none;
+.playlist > p > a {      
+    margin-left: 6%;
+    color: #000;
 }
 
-.album .image-container > a > img {
+.playlist > p > a:hover {
+    color: #FFD1DC;
+}
+
+.playlist-info {
     width: 100%;
-    height: auto;
+    height: 100%;
+}
+
+.playlist-info a {
+    margin-left: 6%;
+    color: #000;
+}
+
+.title {    
+    font-weight: bold;    
+}
+
+.playlist .image-container > a > img {
+    width: 100%;
+    height: 100%;
     border-bottom: solid 2px #000;
 }
 
 .image-container {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 70%;
 }
 
 .image-container .overlay {
@@ -208,12 +258,90 @@ ul {
     margin: 35%;
     margin-left: 40%;
 }
-/* END ALBUMS PAGE */
+
+.playlist a:hover {
+    cursor: pointer;
+}
+/* END PLAYLIST */
+
+/* TRACK */
+.track {
+    padding: 2%;
+    border-bottom: solid 2px #000;
+}
+
+.track a:hover {
+    cursor: pointer;
+}
+
+.track > ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.track > ul > li {
+    margin-left: 3%;
+    float: left;
+    display: block;
+}
+
+.track > ul > li > ul {
+    margin: 0;
+    padding: 0;
+}
+
+.track img {
+    border: solid 1px #000;
+    width: 60px;
+}
+
+.track a {
+    color: #000;
+    font-size: 1.1em;
+}
+
+.track a:hover {
+    color: #FFD1DC;
+}
+
+.track .play-button {
+    font-size: 1em;
+}
+/* END TRACK */
 
 /* PROFILE PAGE*/            
-user-profile-page {
-    width: 60%;
-    height: auto;
+.user-profile-page {
+    width: 100%;
     border: solid 2px #000;
+    padding: 5%;
+    position: absolute;
 }
+
+.user-profile-page > ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.user-profile-page > ul > li {
+    float: left;
+    display: block;
+}
+
+.avatar {
+    width: 200px;
+    border: solid 2px #000;
+    border-radius: 50%;
+}
+
+.user-profile-page > ul > li > p {
+    font-weight: bold;
+    font-size: 3em;
+}
+
 /* END PROFILE PAGE*/
+
+.user-profile-page:last-child {
+    border-bottom: none;
+}

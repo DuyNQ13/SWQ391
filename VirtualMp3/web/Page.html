@@ -50,8 +50,10 @@ and open the template in the editor.
                         </div>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="fa fa-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="fa fa-sign-in"></span> Sign In</a></li>
+                        <li class="hidden"><a href="#"><span class="fa fa-user"></span> Sign Up</a></li>
+                        <li class="hidden"><a href="#"><span class="fa fa-sign-in"></span> Sign In</a></li>
+                        <li class=""><a href="#"><span class="fa fa-sign-out"></span> Sign Out</a></li>
+                        <li class=""><a href="#">Username</a></li>
                     </ul>
                 </div>
             </nav>
@@ -59,88 +61,105 @@ and open the template in the editor.
 
             <!-- START CONTENT -->
             <div class="content" ng-view>
-                <!-- ALBUM LIST -->                
-                <div class="hidden">
-                    <h1>ALBUM LIST</h1>
-                    <div class="album">
+                <!-- HOME PAGE -->                
+                <div class="home-page">                    
+                    <h1>Tracks</h1>
+                    <div class="track">
+                        <ul>
+                            <li>
+                                <div class="image-container">
+                                    <a>
+                                        <img src="resource/albumCover/8.jpg">
+                                        <div class="overlay"><span class="play-button">&#9658;</span></div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li><a class="title">Title</a></li>
+                                    <li><a>Artist</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h1 style="margin-top: 5%;">Playlists</h1>
+                    <div class="playlist-group">
+                        <div class="playlist">
+                            <div class="image-container">
+                                <a>
+                                    <img src="resource/albumCover/1.jpg"/>
+                                    <div class="overlay"><span class="play-button">&#9658;</span></div>
+                                </a>
+                            </div>
+                            <p><br/><a class="title">Playlist Name</a> <br/> <a>User Name</a></p>                       
+                        </div>
+                        <div class="playlist">
+                            <div class="image-container">
+                                <a>
+                                    <img src="resource/albumCover/1.jpg"/>
+                                    <div class="overlay"><span class="play-button">&#9658;</span></div>
+                                </a>
+                            </div>
+                            <p><br/><a class="title">Playlist Name</a> <br/> <a>User Name</a></p>                       
+                        </div>
+                        <div class="playlist">
+                            <div class="image-container">
+                                <a>
+                                    <img src="resource/albumCover/1.jpg"/>
+                                    <div class="overlay"><span class="play-button">&#9658;</span></div>
+                                </a>
+                            </div>
+                            <p><br/><a class="title">Playlist Name</a> <br/> <a>User Name</a></p>                       
+                        </div>
+                        <div class="playlist">
+                            <div class="image-container">
+                                <a>
+                                    <img src="resource/albumCover/24kmagic.jpg"/>
+                                    <div class="overlay"><span class="play-button">&#9658;</span></div>
+                                </a>
+                            </div>
+                            <p><br/><a class="title">Playlist Name</a> <br/> <a>User Name</a></p>                       
+                        </div>
+                    </div>
+                </div>
+                <!-- END HOME PAGE -->
+
+                <!-- PROFILE PAGE -->
+                <div class="user-profile-page hidden">
+                    <ul>
+                        <li><img class="avatar" src="resource/avatar.jpg"></li>
+                        <li style="margin-left: 5%; margin-top: 8%"><p>User Name</p></li>
+                    </ul>
+                    <h2>Tracks</h2>
+                    <div class="track">
+                        <ul>
+                            <li>
+                                <div class="image-container">
+                                    <a>
+                                        <img src="resource/albumCover/8.jpg">
+                                        <div class="overlay"><span class="play-button">&#9658;</span></div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li><a class="title">Title</a></li>
+                                    <li><a>Artist</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>                
+                    <h2>Playlists</h2>
+                    <div class="playlist">
                         <div class="image-container">
-                            <a href="#">
+                            <a>
                                 <img src="resource/albumCover/1.jpg"/>
                                 <div class="overlay"><span class="play-button">&#9658;</span></div>
                             </a>
                         </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
+                        <p><br/><a class="title">Playlist Name</a> <br/> <a>User Name</a></p>                       
                     </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/2.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/3.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/4.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/5.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/6.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/7.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                    <div class="album">
-                        <div class="image-container">
-                            <a href="#">
-                                <img src="resource/albumCover/8.jpg"/>
-                                <div class="overlay"><span class="play-button">&#9658;</span></div>
-                            </a>
-                        </div>
-                        <p><br/><a href="#">Album Name</a> <br/> Artist</p>                       
-                    </div>
-                </div>
-                <!-- END ALBUM LIST -->
-
-                <!-- PROFILE PAGE -->
-                <h1>PROFILE PAGE</h1>
-                <div class="user-profile-page">
-                    <img src="resource/avatar.jpg">
                 </div>
                 <!-- END PROFILE PAGE -->
             </div>
